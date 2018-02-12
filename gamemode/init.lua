@@ -68,12 +68,24 @@ end)
  concommand.Add( "TEAM_ZOMBIE", SpawnTeamZombie )
  concommand.Add( "TEAM_SURVIVOR", SpawnTeamSurvivor )
 
+ --test timer
+ local COLOR_WHITE = Color(255, 255, 255)
  local delay = 0
  hook.Add( "Think", "CurTimeDelay", function()
  if CurTime() < delay then return end
 	print( "This message will repeat every 5 seconds." )
 	delay = CurTime() + 5
  end )
+
+ hook.Add( "HUDPaint", "drawTextExample", function()
+
+	draw.SimpleText("Клавиша", "Default", 500, 500, COLOR_WHITE, TEXT_ALIGN_CENTER)
+	draw.Text( {
+		text = "test",
+		pos = { 50, 50 }
+
+	} )
+end )
 
  ---------------------------------------------------------
 
