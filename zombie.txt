@@ -1,0 +1,6 @@
+"zs"
+{
+	"base"				"base"
+	"title"				"zombie"
+	"menusystem"			"1"
+}
