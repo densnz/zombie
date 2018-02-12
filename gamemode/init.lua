@@ -1,5 +1,5 @@
 AddCSLuaFile( "cl_init.lua" )
-AddCSLuaFile( "cl_hud.lua" ) --nelar lalka
+AddCSLuaFile( "cl_hud.lua" )
 AddCSLuaFile( "cl_set_team.lua" )
 
 AddCSLuaFile( "shared.lua" )
