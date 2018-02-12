@@ -1,5 +1,5 @@
 AddCSLuaFile( "cl_init.lua" )
-AddCSLuaFile( "cl_hud.lua" )
+--AddCSLuaFile( "cl_hud.lua" )
 AddCSLuaFile( "cl_set_team.lua" )
 
 AddCSLuaFile( "shared.lua" )
@@ -67,6 +67,13 @@ end)
 
  concommand.Add( "TEAM_ZOMBIE", SpawnTeamZombie )
  concommand.Add( "TEAM_SURVIVOR", SpawnTeamSurvivor )
+
+ local delay = 0
+ hook.Add( "Think", "CurTimeDelay", function()
+ if CurTime() < delay then return end
+	print( "This message will repeat every 5 seconds." )
+	delay = CurTime() + 5
+ end )
 
  ---------------------------------------------------------
 
