@@ -371,7 +371,7 @@ function good_hud:PaintWavesCircle( x, y, w, h)
 
 end
 
---[[ function good_hud:PaintPoisonCircle( x, y, w, h )
+function good_hud:PaintPoisonCircle( x, y, w, h )
  
         if LocalPlayer():GetPoisonDamage() > 0 then
        
@@ -393,7 +393,7 @@ end
                 draw.SimpleText(LocalPlayer():GetPoisonDamage(), "TheDefaultSettings3", x + 1, y + 1, Color(0,0,0), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
                 draw.SimpleText(LocalPlayer():GetPoisonDamage(), "TheDefaultSettings3", x, y, Color(255,255,255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
         end
-end --]]
+end
 
 function good_hud:PaintAmmoCircle( x, y, w, h )
 
@@ -517,12 +517,12 @@ local function HUDPaint( )
  
 	local text = string.format( "Suit: %iSP", client:Armor( ) );	-- get suit text
 	good_hud:PaintHealthCircle(x + ScrW() * 0.04, y + ScrH() * 0.81, ScreenScale(bar_width), ScreenScale(bar_width))
-	-- good_hud:PaintPoisonCircle(ScreenScale(ScrW() * 0.14), ScreenScale(ScrH() * 0.87), ScreenScale(bar_width) * 0.3, ScreenScale(bar_width) * 0.3)
-	-- good_hud:PaintAmmoCircle(x + ScrW() * 0.89 --[[ScrW() * 0.92]], y + ScrH() * 0.81 --[[ScrH() * 0.875]], ScreenScale(bar_width), ScreenScale(bar_width))
+	good_hud:PaintPoisonCircle(ScreenScale(ScrW() * 0.14), ScreenScale(ScrH() * 0.87), ScreenScale(bar_width) * 0.3, ScreenScale(bar_width) * 0.3)
+	good_hud:PaintAmmoCircle(x + ScrW() * 0.89 --[[ScrW() * 0.92]], y + ScrH() * 0.81 --[[ScrH() * 0.875]], ScreenScale(bar_width), ScreenScale(bar_width))
 	good_hud:PaintWavesTimeCircle(ScreenScale(ScrW() * 0.06), ScreenScale(ScrH() * 0.10), ScreenScale(bar_width) * 0.7, ScreenScale(bar_width) * 0.7)
 	good_hud:PaintWavesCircle(ScreenScale(ScrW() * 0.11), ScreenScale(ScrH() * 0.06), ScreenScale(bar_width) * 0.3, ScreenScale(bar_width) * 0.3)
-	-- good_hud:PaintPoints(ScreenScale(ScrW() * 0.06), ScreenScale(ScrH() * 0.17), ScreenScale(bar_width) * 0.7, ScreenScale(bar_width) * 0.7)
+	good_hud:PaintPoints(ScreenScale(ScrW() * 0.06), ScreenScale(ScrH() * 0.17), ScreenScale(bar_width) * 0.7, ScreenScale(bar_width) * 0.7)
 	good_hud:PaintServerName(ScrW()/2, ScrH())
-	-- good_hud:PaintWaveStatus(ScreenScale(ScrW() * 0.06), ScreenScale(ScrH() * 0.025))
+	good_hud:PaintWaveStatus(ScreenScale(ScrW() * 0.06), ScreenScale(ScrH() * 0.025))
 end
 hook.Add( "HUDPaint", "PaintOurHud", HUDPaint );

@@ -55,6 +55,7 @@ end)
  
 
  ------------------- TESTING FUNCTIONS -------------------
+ 
  function SpawnTeamZombie(pl) 
      pl:SetTeam( TEAM_ZOMBIE )
 	 pl:Spawn()
@@ -68,30 +69,10 @@ end)
  concommand.Add( "TEAM_ZOMBIE", SpawnTeamZombie )
  concommand.Add( "TEAM_SURVIVOR", SpawnTeamSurvivor )
 
- --test timer
- local COLOR_WHITE = Color(255, 255, 255)
- local delay = 0
- hook.Add( "Think", "CurTimeDelay", function()
- if CurTime() < delay then return end
-	print( "This message will repeat every 5 seconds." )
-	delay = CurTime() + 5
- end )
-
- hook.Add( "HUDPaint", "drawTextExample", function()
-
-	draw.SimpleText("Клавиша", "Default", 500, 500, COLOR_WHITE, TEXT_ALIGN_CENTER)
-	draw.Text( {
-		text = "test",
-		pos = { 50, 50 }
-
-	} )
-end )
-
- ---------------------------------------------------------
-
- --[[util.AddNetworkString( "SendAge" )
-
-net.Receive( "SendAge", function( len, ply ) -- len is the net message length, which we don't care about, ply is the player who sent it.
-	 local age = net.ReadUInt( 8 ) -- Notice how ReadUInt requires an argument. This is the second argument of WriteUInt, which tells us how big the number is.
-	 PrintMessage( HUD_PRINTTALK, ply:Nick() .. " is " .. age .. " years old!" )
-end ) --]]
+ -------------------- TEST TIMER -------------------------
+--  local delay = 0
+--  hook.Add( "Think", "CurTimeDelay", function()
+--  if CurTime() < delay then return end
+-- 	print( "This message will repeat every 5 seconds." )
+-- 	delay = CurTime() + 5
+--  end )
